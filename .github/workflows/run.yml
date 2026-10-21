@@ -1,1 +1,44 @@
+name: Automaton
 
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: automaton
+  cancel-in-progress: false
+
+jobs:
+  ciclo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Correr un ciclo de la colonia
+        run: python automaton.py
+
+      - name: Avisar si un bot o la colonia pierde 50%
+        if: hashFiles('alerts.txt') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create --title "⚠ Automaton: pérdida del 50%" --body "$(cat alerts.txt)"
+          rm alerts.txt
+
+      - name: Guardar estado
+        run: |
+          git config user.name "automaton-bot"
+          git config user.email "automaton-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "Ciclo de la colonia"
+          git pull --rebase
+          git push
