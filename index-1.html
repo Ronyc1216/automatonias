@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colonia Automaton</title>
+<style>
+  :root { --bg:#0b0f14; --card:#141b24; --line:#223042; --txt:#e6edf3; --dim:#8b9bb0;
+          --verde:#3fd28b; --rojo:#ff5d5d; --oro:#f2b84b; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+         font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  main { max-width:900px; margin:0 auto; padding:20px 16px 60px; }
+  h1 { font-size:24px; margin:0 0 2px; }
+  .sub { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-bottom:16px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; }
+  .kpi b { display:block; font-size:22px; }
+  .kpi span { color:var(--dim); font-size:12px; }
+  canvas { width:100%; height:160px; background:var(--card); border:1px solid var(--line);
+           border-radius:12px; margin-bottom:16px; }
+  h2 { font-size:16px; margin:22px 0 10px; }
+  .bots { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px; }
+  .bot { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; }
+  .bot.muerto { opacity:.45; }
+  .bot .top { display:flex; justify-content:space-between; align-items:baseline; }
+  .bot .nom { font-weight:700; font-size:16px; }
+  .tag { font-size:11px; padding:2px 7px; border-radius:20px; border:1px solid var(--line); color:var(--dim); }
+  .row { display:flex; justify-content:space-between; color:var(--dim); font-size:13px; margin-top:4px; }
+  .row b { color:var(--txt); font-weight:600; }
+  .up { color:var(--verde)!important; } .down { color:var(--rojo)!important; }
+  .ev { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px 12px;
+        font-size:13px; max-height:360px; overflow:auto; }
+  .ev div { padding:6px 0; border-bottom:1px solid var(--line); }
+  .ev div:last-child { border:0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🤖 Colonia Automaton</h1>
+  <div class="sub" id="sub">Cargando…</div>
+  <div class="kpis" id="kpis"></div>
+  <canvas id="graf"></canvas>
+  <h2>Bots</h2>
+  <div class="bots" id="bots"></div>
+  <h2>Bitácora de la empresa</h2>
+  <div class="ev" id="ev"></div>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const usd = n => "$" + Number(n).toLocaleString("es", {minimumFractionDigits:2, maximumFractionDigits:2});
+
+async function cargar() {
+  let s;
+  try {
+    s = await (await fetch("state.json?t=" + Date.now())).json();
+  } catch (e) {
+    $("sub").textContent = "La colonia todavía no ha corrido su primer ciclo.";
+    return;
+  }
+  const vivos = s.bots.filter(b => b.vivo);
+  const total = vivos.reduce((a, b) => a + b.equity, 0);
+  const cambio = (total / 200 - 1) * 100;
+  $("sub").textContent = `Dinero falso, precios reales de Coinbase · actualizado ${s.actualizado} · ciclo ${s.ciclos}`;
+  $("kpis").innerHTML = [
+    [usd(total), "Capital de la colonia", cambio >= 0 ? "up" : "down"],
+    [(cambio >= 0 ? "+" : "") + cambio.toFixed(2) + "%", "Desde $200", cambio >= 0 ? "up" : "down"],
+    [vivos.length, "Bots vivos", ""],
+    [s.bots.length - vivos.length, "Muertos", ""],
+    ["$" + Math.round(s.precios.BTC).toLocaleString("es"), "BTC", ""],
+  ].map(([v, l, c]) => `<div class="kpi"><b class="${c}">${v}</b><span>${l}</span></div>`).join("");
+
+  const orden = [...s.bots].sort((a, b) => (b.vivo - a.vivo) || (b.equity - a.equity));
+  $("bots").innerHTML = orden.map(b => {
+    const r = (b.equity / b.capital_inicial - 1) * 100;
+    const pos = b.posicion ? `comprado a ${b.posicion.entrada.toLocaleString("es")}` : "en espera";
+    return `<div class="bot ${b.vivo ? "" : "muerto"}">
+      <div class="top"><span class="nom">${b.vivo ? "" : "☠ "}${b.nombre}</span>
+        <span class="tag">${b.moneda} · x${b.genes.apalancamiento}</span></div>
+      <div class="row">Capital <b class="${r >= 0 ? "up" : "down"}">${usd(b.equity)} (${r >= 0 ? "+" : ""}${r.toFixed(1)}%)</b></div>
+      <div class="row">Estado <b>${b.vivo ? pos : "murió " + b.murio}</b></div>
+      <div class="row">Generación <b>${b.generacion}${b.padre ? " · hijo de " + b.padre : ""}</b></div>
+      <div class="row">Operaciones <b>${b.ganadas}/${b.operaciones} ganadas · ${b.hijos} hijos</b></div>
+    </div>`;
+  }).join("");
+
+  $("ev").innerHTML = s.eventos.map(e => `<div>${e}</div>`).join("");
+  dibujar(s.equity_colonia.map(p => p[1]));
+}
+
+function dibujar(datos) {
+  const c = $("graf"), x = c.getContext("2d");
+  const w = c.width = c.clientWidth * devicePixelRatio, h = c.height = c.clientHeight * devicePixelRatio;
+  if (datos.length < 2) return;
+  const min = Math.min(...datos, 200) * 0.995, max = Math.max(...datos, 200) * 1.005;
+  const Y = v => h - (v - min) / (max - min) * h * 0.9 - h * 0.05;
+  x.strokeStyle = "#223042"; x.setLineDash([6, 6]); x.beginPath();
+  x.moveTo(0, Y(200)); x.lineTo(w, Y(200)); x.stroke(); x.setLineDash([]);
+  x.strokeStyle = datos.at(-1) >= 200 ? "#3fd28b" : "#ff5d5d"; x.lineWidth = 2 * devicePixelRatio;
+  x.beginPath();
+  datos.forEach((v, i) => { const px = i / (datos.length - 1) * w; i ? x.lineTo(px, Y(v)) : x.moveTo(px, Y(v)); });
+  x.stroke();
+}
+
+cargar();
+setInterval(cargar, 60000);
+</script>
+</body>
+</html>
