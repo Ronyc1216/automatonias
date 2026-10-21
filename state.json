@@ -1,0 +1,169 @@
+{
+ "creado": "2026-10-21 03:16 UTC",
+ "contador": 5,
+ "ciclos": 1,
+ "bots": [
+  {
+   "id": 1,
+   "nombre": "Satoshi",
+   "moneda": "BTC",
+   "capital_inicial": 120.0,
+   "efectivo": 120.0,
+   "posicion": null,
+   "genes": {
+    "ema_rapida": 8,
+    "ema_lenta": 37,
+    "stop_loss": 0.025,
+    "take_profit": 0.045,
+    "apalancamiento": 1,
+    "uso_capital": 0.61
+   },
+   "padre": null,
+   "generacion": 1,
+   "vivo": true,
+   "nacio": "2026-10-21 03:16 UTC",
+   "murio": null,
+   "operaciones": 0,
+   "ganadas": 0,
+   "hijos": 0,
+   "alerta_50": false,
+   "equity": 120.0
+  },
+  {
+   "id": 2,
+   "nombre": "Halcón",
+   "moneda": "BTC",
+   "capital_inicial": 60.0,
+   "efectivo": 60.0,
+   "posicion": null,
+   "genes": {
+    "ema_rapida": 8,
+    "ema_lenta": 34,
+    "stop_loss": 0.038,
+    "take_profit": 0.087,
+    "apalancamiento": 3,
+    "uso_capital": 0.64
+   },
+   "padre": null,
+   "generacion": 1,
+   "vivo": true,
+   "nacio": "2026-10-21 03:16 UTC",
+   "murio": null,
+   "operaciones": 0,
+   "ganadas": 0,
+   "hijos": 0,
+   "alerta_50": false,
+   "equity": 60.0
+  },
+  {
+   "id": 3,
+   "nombre": "Éter",
+   "moneda": "ETH",
+   "capital_inicial": 7.0,
+   "efectivo": 7.0,
+   "posicion": null,
+   "genes": {
+    "ema_rapida": 12,
+    "ema_lenta": 33,
+    "stop_loss": 0.036,
+    "take_profit": 0.046,
+    "apalancamiento": 1,
+    "uso_capital": 0.88
+   },
+   "padre": null,
+   "generacion": 1,
+   "vivo": true,
+   "nacio": "2026-10-21 03:16 UTC",
+   "murio": null,
+   "operaciones": 0,
+   "ganadas": 0,
+   "hijos": 0,
+   "alerta_50": false,
+   "equity": 7.0
+  },
+  {
+   "id": 4,
+   "nombre": "Solar",
+   "moneda": "SOL",
+   "capital_inicial": 7.0,
+   "efectivo": 7.0,
+   "posicion": null,
+   "genes": {
+    "ema_rapida": 12,
+    "ema_lenta": 27,
+    "stop_loss": 0.042,
+    "take_profit": 0.045,
+    "apalancamiento": 2,
+    "uso_capital": 0.65
+   },
+   "padre": null,
+   "generacion": 1,
+   "vivo": true,
+   "nacio": "2026-10-21 03:16 UTC",
+   "murio": null,
+   "operaciones": 0,
+   "ganadas": 0,
+   "hijos": 0,
+   "alerta_50": false,
+   "equity": 7.0
+  },
+  {
+   "id": 5,
+   "nombre": "Dogo",
+   "moneda": "DOGE",
+   "capital_inicial": 6.0,
+   "efectivo": 6.0,
+   "posicion": null,
+   "genes": {
+    "ema_rapida": 8,
+    "ema_lenta": 27,
+    "stop_loss": 0.033,
+    "take_profit": 0.062,
+    "apalancamiento": 1,
+    "uso_capital": 0.67
+   },
+   "padre": null,
+   "generacion": 1,
+   "vivo": true,
+   "nacio": "2026-10-21 03:16 UTC",
+   "murio": null,
+   "operaciones": 0,
+   "ganadas": 0,
+   "hijos": 0,
+   "alerta_50": false,
+   "equity": 6.0
+  }
+ ],
+ "historial": {
+  "BTC": [
+   82699.985
+  ],
+  "ETH": [
+   2446.86
+  ],
+  "SOL": [
+   106.08
+  ],
+  "DOGE": [
+   0.08165
+  ]
+ },
+ "eventos": [
+  "2026-10-21 03:16 UTC · Nace la colonia con $200 y 5 bots fundadores"
+ ],
+ "equity_colonia": [
+  [
+   "2026-10-21 03:16 UTC",
+   200.0
+  ]
+ ],
+ "alerta_colonia": false,
+ "actualizado": "2026-10-21 03:16 UTC",
+ "precios": {
+  "BTC": 82699.985,
+  "ETH": 2446.86,
+  "SOL": 106.08,
+  "DOGE": 0.08165
+ },
+ "vivos": 5
+}
