@@ -1,15 +1,20 @@
 {
  "creado": "2026-10-21 03:16 UTC",
  "contador": 5,
- "ciclos": 79,
+ "ciclos": 80,
  "bots": [
   {
    "id": 1,
    "nombre": "Satoshi",
    "moneda": "BTC",
    "capital_inicial": 120.0,
-   "efectivo": 120.0,
-   "posicion": null,
+   "efectivo": 46.3608,
+   "posicion": {
+    "entrada": 80602.655,
+    "margen": 73.2,
+    "cantidad": 0.0009081586704557065,
+    "abierta": "2026-11-04 23:47 UTC"
+   },
    "genes": {
     "ema_rapida": 8,
     "ema_lenta": 37,
@@ -27,15 +32,20 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 120.0
+   "equity": 119.56
   },
   {
    "id": 2,
    "nombre": "Halcón",
    "moneda": "BTC",
    "capital_inicial": 60.0,
-   "efectivo": 60.0,
-   "posicion": null,
+   "efectivo": 20.9088,
+   "posicion": {
+    "entrada": 80602.655,
+    "margen": 38.4,
+    "cantidad": 0.0014292333174384887,
+    "abierta": "2026-11-04 23:47 UTC"
+   },
    "genes": {
     "ema_rapida": 8,
     "ema_lenta": 34,
@@ -53,7 +63,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 60.0
+   "equity": 59.31
   },
   {
    "id": 3,
@@ -84,7 +94,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 6.96
+   "equity": 6.95
   },
   {
    "id": 4,
@@ -219,7 +229,8 @@
    77761.425,
    75867.155,
    78464.105,
-   80545.505
+   80545.505,
+   80602.655
   ],
   "ETH": [
    2446.86,
@@ -300,7 +311,8 @@
    2284.95,
    2232.27,
    2323.855,
-   2433.525
+   2433.525,
+   2428.84
   ],
   "SOL": [
    106.08,
@@ -381,7 +393,8 @@
    93.235,
    90.475,
    93.4,
-   95.925
+   95.925,
+   95.735
   ],
   "DOGE": [
    0.08165,
@@ -462,10 +475,13 @@
    0.075415,
    0.072845,
    0.07511,
-   0.077035
+   0.077035,
+   0.07723
   ]
  },
  "eventos": [
+  "2026-11-04 23:47 UTC · Halcón compra BTC a 80,602.6550 (margen $38.40, x3)",
+  "2026-11-04 23:47 UTC · Satoshi compra BTC a 80,602.6550 (margen $73.20, x1)",
   "2026-11-04 18:16 UTC · Éter compra ETH a 2,433.5250 (margen $6.16, x1)",
   "2026-10-30 00:22 UTC · Dogo cierra DOGE (stop loss): -0.27 USD",
   "2026-10-28 07:35 UTC · Dogo compra DOGE a 0.0797 (margen $4.02, x1)",
@@ -787,15 +803,19 @@
   [
    "2026-11-04 18:16 UTC",
    199.66
+  ],
+  [
+   "2026-11-04 23:47 UTC",
+   198.52
   ]
  ],
  "alerta_colonia": false,
- "actualizado": "2026-11-04 18:16 UTC",
+ "actualizado": "2026-11-04 23:47 UTC",
  "precios": {
-  "BTC": 80545.505,
-  "ETH": 2433.525,
-  "SOL": 95.925,
-  "DOGE": 0.077035
+  "BTC": 80602.655,
+  "ETH": 2428.84,
+  "SOL": 95.735,
+  "DOGE": 0.07723
  },
  "vivos": 5
 }
