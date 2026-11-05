@@ -1,7 +1,7 @@
 {
  "creado": "2026-10-21 03:16 UTC",
  "contador": 5,
- "ciclos": 80,
+ "ciclos": 81,
  "bots": [
   {
    "id": 1,
@@ -32,7 +32,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 119.56
+   "equity": 119.48
   },
   {
    "id": 2,
@@ -63,7 +63,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 59.31
+   "equity": 59.19
   },
   {
    "id": 3,
@@ -94,7 +94,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 6.95
+   "equity": 6.94
   },
   {
    "id": 4,
@@ -127,8 +127,13 @@
    "nombre": "Dogo",
    "moneda": "DOGE",
    "capital_inicial": 6.0,
-   "efectivo": 5.704243145475084,
-   "posicion": null,
+   "efectivo": 1.8594691805619674,
+   "posicion": {
+    "entrada": 0.077035,
+    "margen": 3.821842907468307,
+    "cantidad": 49.61177266785626,
+    "abierta": "2026-11-05 03:51 UTC"
+   },
    "genes": {
     "ema_rapida": 8,
     "ema_lenta": 27,
@@ -146,7 +151,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 5.7
+   "equity": 5.68
   }
  ],
  "historial": {
@@ -230,7 +235,8 @@
    75867.155,
    78464.105,
    80545.505,
-   80602.655
+   80602.655,
+   80517.505
   ],
   "ETH": [
    2446.86,
@@ -312,7 +318,8 @@
    2232.27,
    2323.855,
    2433.525,
-   2428.84
+   2428.84,
+   2424.335
   ],
   "SOL": [
    106.08,
@@ -394,7 +401,8 @@
    90.475,
    93.4,
    95.925,
-   95.735
+   95.735,
+   96.415
   ],
   "DOGE": [
    0.08165,
@@ -476,10 +484,12 @@
    0.072845,
    0.07511,
    0.077035,
-   0.07723
+   0.07723,
+   0.077035
   ]
  },
  "eventos": [
+  "2026-11-05 03:51 UTC · Dogo compra DOGE a 0.0770 (margen $3.82, x1)",
   "2026-11-04 23:47 UTC · Halcón compra BTC a 80,602.6550 (margen $38.40, x3)",
   "2026-11-04 23:47 UTC · Satoshi compra BTC a 80,602.6550 (margen $73.20, x1)",
   "2026-11-04 18:16 UTC · Éter compra ETH a 2,433.5250 (margen $6.16, x1)",
@@ -807,15 +817,19 @@
   [
    "2026-11-04 23:47 UTC",
    198.52
+  ],
+  [
+   "2026-11-05 03:51 UTC",
+   198.29
   ]
  ],
  "alerta_colonia": false,
- "actualizado": "2026-11-04 23:47 UTC",
+ "actualizado": "2026-11-05 03:51 UTC",
  "precios": {
-  "BTC": 80602.655,
-  "ETH": 2428.84,
-  "SOL": 95.735,
-  "DOGE": 0.07723
+  "BTC": 80517.505,
+  "ETH": 2424.335,
+  "SOL": 96.415,
+  "DOGE": 0.077035
  },
  "vivos": 5
 }
