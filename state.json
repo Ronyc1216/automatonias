@@ -1,7 +1,7 @@
 {
  "creado": "2026-10-21 03:16 UTC",
  "contador": 5,
- "ciclos": 83,
+ "ciclos": 84,
  "bots": [
   {
    "id": 1,
@@ -34,13 +34,8 @@
    "nombre": "Halcón",
    "moneda": "BTC",
    "capital_inicial": 60.0,
-   "efectivo": 18.175825475836966,
-   "posicion": {
-    "entrada": 76055.355,
-    "margen": 33.3807630410229,
-    "cantidad": 0.0013167026716668236,
-    "abierta": "2026-11-05 18:57 UTC"
-   },
+   "efectivo": 50.58682263395111,
+   "posicion": null,
    "genes": {
     "ema_rapida": 8,
     "ema_lenta": 34,
@@ -54,11 +49,11 @@
    "vivo": true,
    "nacio": "2026-10-21 03:16 UTC",
    "murio": null,
-   "operaciones": 1,
+   "operaciones": 2,
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 51.56
+   "equity": 50.59
   },
   {
    "id": 3,
@@ -89,7 +84,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 6.43
+   "equity": 6.38
   },
   {
    "id": 4,
@@ -228,7 +223,8 @@
    80602.655,
    80517.505,
    80263.725,
-   76055.355
+   76055.355,
+   75773.485
   ],
   "ETH": [
    2446.86,
@@ -313,7 +309,8 @@
    2428.84,
    2424.335,
    2416.59,
-   2250.635
+   2250.635,
+   2230.9
   ],
   "SOL": [
    106.08,
@@ -398,7 +395,8 @@
    95.735,
    96.415,
    96.425,
-   89.655
+   89.655,
+   89.055
   ],
   "DOGE": [
    0.08165,
@@ -483,10 +481,12 @@
    0.07723,
    0.077035,
    0.076805,
-   0.07192
+   0.07192,
+   0.07092
   ]
  },
  "eventos": [
+  "2026-11-05 23:55 UTC · Halcón cierra BTC (tendencia a la baja): -0.97 USD",
   "2026-11-05 18:57 UTC · Dogo cierra DOGE (stop loss): -0.28 USD",
   "2026-11-05 18:57 UTC · Éter compra ETH a 2,250.6350 (margen $5.69, x1)",
   "2026-11-05 18:57 UTC · Éter cierra ETH (stop loss): -0.50 USD",
@@ -833,15 +833,19 @@
   [
    "2026-11-05 18:57 UTC",
    185.42
+  ],
+  [
+   "2026-11-05 23:55 UTC",
+   184.4
   ]
  ],
  "alerta_colonia": false,
- "actualizado": "2026-11-05 18:57 UTC",
+ "actualizado": "2026-11-05 23:55 UTC",
  "precios": {
-  "BTC": 76055.355,
-  "ETH": 2250.635,
-  "SOL": 89.655,
-  "DOGE": 0.07192
+  "BTC": 75773.485,
+  "ETH": 2230.9,
+  "SOL": 89.055,
+  "DOGE": 0.07092
  },
  "vivos": 5
 }
