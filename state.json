@@ -1,7 +1,7 @@
 {
  "creado": "2026-10-21 03:16 UTC",
  "contador": 5,
- "ciclos": 85,
+ "ciclos": 86,
  "bots": [
   {
    "id": 1,
@@ -60,13 +60,8 @@
    "nombre": "Éter",
    "moneda": "ETH",
    "capital_inicial": 7.0,
-   "efectivo": 0.7417688375681397,
-   "posicion": {
-    "entrada": 2250.635,
-    "margen": 5.689998056659373,
-    "cantidad": 0.002528174518151265,
-    "abierta": "2026-11-05 18:57 UTC"
-   },
+   "efectivo": 6.365887646788292,
+   "posicion": null,
    "genes": {
     "ema_rapida": 12,
     "ema_lenta": 33,
@@ -80,11 +75,11 @@
    "vivo": true,
    "nacio": "2026-10-21 03:16 UTC",
    "murio": null,
-   "operaciones": 1,
+   "operaciones": 2,
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 6.38
+   "equity": 6.37
   },
   {
    "id": 4,
@@ -225,7 +220,8 @@
    80263.725,
    76055.355,
    75773.485,
-   75797.555
+   75797.555,
+   76016.605
   ],
   "ETH": [
    2446.86,
@@ -312,7 +308,8 @@
    2416.59,
    2250.635,
    2230.9,
-   2231.115
+   2231.115,
+   2238.005
   ],
   "SOL": [
    106.08,
@@ -399,7 +396,8 @@
    96.425,
    89.655,
    89.055,
-   89.735
+   89.735,
+   90.305
   ],
   "DOGE": [
    0.08165,
@@ -486,10 +484,12 @@
    0.076805,
    0.07192,
    0.07092,
-   0.07166
+   0.07166,
+   0.072475
   ]
  },
  "eventos": [
+  "2026-11-06 11:38 UTC · Éter cierra ETH (tendencia a la baja): -0.07 USD",
   "2026-11-05 23:55 UTC · Halcón cierra BTC (tendencia a la baja): -0.97 USD",
   "2026-11-05 18:57 UTC · Dogo cierra DOGE (stop loss): -0.28 USD",
   "2026-11-05 18:57 UTC · Éter compra ETH a 2,250.6350 (margen $5.69, x1)",
@@ -845,15 +845,19 @@
   [
    "2026-11-06 03:50 UTC",
    184.4
+  ],
+  [
+   "2026-11-06 11:38 UTC",
+   184.39
   ]
  ],
  "alerta_colonia": false,
- "actualizado": "2026-11-06 03:50 UTC",
+ "actualizado": "2026-11-06 11:38 UTC",
  "precios": {
-  "BTC": 75797.555,
-  "ETH": 2231.115,
-  "SOL": 89.735,
-  "DOGE": 0.07166
+  "BTC": 76016.605,
+  "ETH": 2238.005,
+  "SOL": 90.305,
+  "DOGE": 0.072475
  },
  "vivos": 5
 }
