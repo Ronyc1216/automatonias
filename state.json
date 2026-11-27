@@ -1,7 +1,7 @@
 {
  "creado": "2026-10-21 03:16 UTC",
  "contador": 5,
- "ciclos": 161,
+ "ciclos": 162,
  "bots": [
   {
    "id": 1,
@@ -112,8 +112,13 @@
    "nombre": "Dogo",
    "moneda": "DOGE",
    "capital_inicial": 6.0,
-   "efectivo": 5.406139398692556,
-   "posicion": null,
+   "efectivo": 1.7622933211857994,
+   "posicion": {
+    "entrada": 0.05861,
+    "margen": 3.6221133971240125,
+    "cantidad": 61.800262704726364,
+    "abierta": "2026-11-27 11:29 UTC"
+   },
    "genes": {
     "ema_rapida": 8,
     "ema_lenta": 27,
@@ -131,7 +136,7 @@
    "ganadas": 0,
    "hijos": 0,
    "alerta_50": false,
-   "equity": 5.41
+   "equity": 5.38
   }
  ],
  "historial": {
@@ -296,7 +301,8 @@
    60863.43,
    60422.445,
    60655.125,
-   61345.695
+   61345.695,
+   61619.165
   ],
   "ETH": [
    2446.86,
@@ -459,7 +465,8 @@
    1702.83,
    1692.605,
    1702.365,
-   1722.245
+   1722.245,
+   1725.815
   ],
   "SOL": [
    106.08,
@@ -622,7 +629,8 @@
    71.36,
    70.4,
    71.21,
-   72.325
+   72.325,
+   73.18
   ],
   "DOGE": [
    0.08165,
@@ -785,10 +793,12 @@
    0.05686,
    0.056545,
    0.057035,
-   0.057505
+   0.057505,
+   0.05861
   ]
  },
  "eventos": [
+  "2026-11-27 11:29 UTC · Dogo compra DOGE a 0.0586 (margen $3.62, x1)",
   "2026-11-06 11:38 UTC · Éter cierra ETH (tendencia a la baja): -0.07 USD",
   "2026-11-05 23:55 UTC · Halcón cierra BTC (tendencia a la baja): -0.97 USD",
   "2026-11-05 18:57 UTC · Dogo cierra DOGE (stop loss): -0.28 USD",
@@ -1449,15 +1459,19 @@
   [
    "2026-11-27 02:48 UTC",
    184.39
+  ],
+  [
+   "2026-11-27 11:29 UTC",
+   184.36
   ]
  ],
  "alerta_colonia": false,
- "actualizado": "2026-11-27 02:48 UTC",
+ "actualizado": "2026-11-27 11:29 UTC",
  "precios": {
-  "BTC": 61345.695,
-  "ETH": 1722.245,
-  "SOL": 72.325,
-  "DOGE": 0.057505
+  "BTC": 61619.165,
+  "ETH": 1725.815,
+  "SOL": 73.18,
+  "DOGE": 0.05861
  },
  "vivos": 5
 }
